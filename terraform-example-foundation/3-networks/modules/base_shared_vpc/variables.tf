@@ -54,7 +54,7 @@ variable "nat_enabled" {
 variable "nat_bgp_asn" {
   type        = number
   description = "BGP ASN for first NAT cloud routes."
-  default     = 0
+  default     = 64514
 }
 
 variable "nat_num_addresses_region1" {
@@ -125,12 +125,6 @@ variable "nat_num_addresses" {
   type        = number
   description = "Number of external IPs to reserve for Cloud NAT."
   default     = 2
-}
-
-variable "optional_fw_rules_enabled" {
-  type        = bool
-  description = "Toggle creation of optional firewall rules: IAP SSH, IAP RDP and Internal & Global load balancing health check and load balancing IP ranges."
-  default     = false
 }
 
 variable "parent_folder" {

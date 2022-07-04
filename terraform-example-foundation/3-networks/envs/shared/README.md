@@ -20,11 +20,8 @@ The purpose of this step is to set up the global [DNS Hub](https://cloud.google.
 | base\_hub\_nat\_enabled | Toggle creation of NAT cloud router in Base Hub. | `bool` | `false` | no |
 | base\_hub\_nat\_num\_addresses\_region1 | Number of external IPs to reserve for first Cloud NAT in Base Hub. | `number` | `2` | no |
 | base\_hub\_nat\_num\_addresses\_region2 | Number of external IPs to reserve for second Cloud NAT in Base Hub. | `number` | `2` | no |
-| base\_hub\_optional\_fw\_rules\_enabled | Toggle creation of optional firewall rules: IAP SSH, IAP RDP and Internal & Global load balancing health check and load balancing IP ranges in Base Hub VPC. | `bool` | `false` | no |
 | base\_hub\_windows\_activation\_enabled | Enable Windows license activation for Windows workloads in Base Hub | `bool` | `false` | no |
 | bgp\_asn\_dns | BGP Autonomous System Number (ASN). | `number` | `64667` | no |
-| default\_region1 | First subnet region for DNS Hub network. | `string` | n/a | yes |
-| default\_region2 | Second subnet region for DNS Hub network. | `string` | n/a | yes |
 | dns\_enable\_logging | Toggle DNS logging for VPC DNS. | `bool` | `true` | no |
 | domain | The DNS name of forwarding managed zone, for instance 'example.com'. Must end with a period. | `string` | n/a | yes |
 | enable\_hub\_and\_spoke | Enable Hub-and-Spoke architecture. | `bool` | `false` | no |
@@ -42,7 +39,6 @@ The purpose of this step is to set up the global [DNS Hub](https://cloud.google.
 | restricted\_hub\_nat\_enabled | Toggle creation of NAT cloud router in Restricted Hub. | `bool` | `false` | no |
 | restricted\_hub\_nat\_num\_addresses\_region1 | Number of external IPs to reserve for first Cloud NAT in Restricted Hub. | `number` | `2` | no |
 | restricted\_hub\_nat\_num\_addresses\_region2 | Number of external IPs to reserve for second Cloud NAT in Restricted Hub. | `number` | `2` | no |
-| restricted\_hub\_optional\_fw\_rules\_enabled | Toggle creation of optional firewall rules: IAP SSH, IAP RDP and Internal & Global load balancing health check and load balancing IP ranges in Restricted Hub VPC. | `bool` | `false` | no |
 | restricted\_hub\_windows\_activation\_enabled | Enable Windows license activation for Windows workloads in Restricted Hub. | `bool` | `false` | no |
 | subnetworks\_enable\_logging | Toggle subnetworks flow logging for VPC Subnetworks. | `bool` | `true` | no |
 | target\_name\_server\_addresses | List of IPv4 address of target name servers for the forwarding zone configuration. See https://cloud.google.com/dns/docs/overview#dns-forwarding-zones for details on target name servers in the context of Cloud DNS forwarding zones. | `list(string)` | n/a | yes |

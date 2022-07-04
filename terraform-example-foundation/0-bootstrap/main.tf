@@ -31,7 +31,7 @@ resource "google_folder" "bootstrap" {
 
 module "seed_bootstrap" {
   source                         = "terraform-google-modules/bootstrap/google"
-  version                        = "~> 4.0"
+  version                        = "~> 5.0"
   org_id                         = var.org_id
   folder_id                      = google_folder.bootstrap.id
   project_id                     = "${var.project_prefix}-b-seed"
@@ -45,6 +45,9 @@ module "seed_bootstrap" {
   parent_folder                  = var.parent_folder == "" ? "" : local.parent
   org_admins_org_iam_permissions = local.org_admins_org_iam_permissions
   project_prefix                 = var.project_prefix
+
+  # Remove after github.com/terraform-google-modules/terraform-google-bootstrap/issues/160
+  depends_on = [google_folder.bootstrap]
 
   project_labels = {
     environment       = "bootstrap"
@@ -102,7 +105,7 @@ resource "google_billing_account_iam_member" "tf_billing_admin" {
 // Comment-out the cloudbuild_bootstrap module and its outputs if you want to use Jenkins instead of Cloud Build
 module "cloudbuild_bootstrap" {
   source                      = "terraform-google-modules/bootstrap/google//modules/cloudbuild"
-  version                     = "~> 3.0"
+  version                     = "~> 5.0"
   org_id                      = var.org_id
   folder_id                   = google_folder.bootstrap.id
   project_id                  = "${var.project_prefix}-b-cicd"
@@ -117,9 +120,12 @@ module "cloudbuild_bootstrap" {
   cloudbuild_apply_filename   = "cloudbuild-tf-apply.yaml"
   project_prefix              = var.project_prefix
   cloud_source_repos          = var.cloud_source_repos
-  terraform_validator_release = "v0.4.0"
+  terraform_validator_release = "v0.6.0"
   terraform_version           = "0.13.7"
   terraform_version_sha256sum = "4a52886e019b4fdad2439da5ff43388bbcc6cce9784fde32c53dcd0e28ca9957"
+
+  # Remove after github.com/terraform-google-modules/terraform-google-bootstrap/issues/160
+  depends_on = [module.seed_bootstrap]
 
   activate_apis = [
     "serviceusage.googleapis.com",
@@ -177,15 +183,7 @@ data "google_project" "cloudbuild" {
 }
 
 resource "google_organization_iam_member" "org_cb_sa_iam_viewer" {
-  count  = var.parent_folder == "" ? 1 : 0
   org_id = var.org_id
-  role   = "roles/iam.securityReviewer"
-  member = "serviceAccount:${data.google_project.cloudbuild.number}@cloudbuild.gserviceaccount.com"
-}
-
-resource "google_folder_iam_member" "org_cb_sa_iam_viewer" {
-  count  = var.parent_folder != "" ? 1 : 0
-  folder = var.parent_folder
   role   = "roles/iam.securityReviewer"
   member = "serviceAccount:${data.google_project.cloudbuild.number}@cloudbuild.gserviceaccount.com"
 }

@@ -41,16 +41,6 @@ variable "access_context_manager_policy_id" {
   description = "The id of the default Access Context Manager policy created in step `1-org`. Can be obtained by running `gcloud access-context-manager policies list --organization YOUR_ORGANIZATION_ID --format=\"value(name)\"`."
 }
 
-variable "default_region1" {
-  type        = string
-  description = "First subnet region for DNS Hub network."
-}
-
-variable "default_region2" {
-  type        = string
-  description = "Second subnet region for DNS Hub network."
-}
-
 variable "dns_enable_logging" {
   type        = bool
   description = "Toggle DNS logging for VPC DNS."
@@ -137,18 +127,6 @@ variable "restricted_hub_firewall_enable_logging" {
   type        = bool
   description = "Toggle firewall logging for VPC Firewalls in Restricted Hub VPC."
   default     = true
-}
-
-variable "base_hub_optional_fw_rules_enabled" {
-  type        = bool
-  description = "Toggle creation of optional firewall rules: IAP SSH, IAP RDP and Internal & Global load balancing health check and load balancing IP ranges in Base Hub VPC."
-  default     = false
-}
-
-variable "restricted_hub_optional_fw_rules_enabled" {
-  type        = bool
-  description = "Toggle creation of optional firewall rules: IAP SSH, IAP RDP and Internal & Global load balancing health check and load balancing IP ranges in Restricted Hub VPC."
-  default     = false
 }
 
 variable "base_hub_nat_enabled" {
