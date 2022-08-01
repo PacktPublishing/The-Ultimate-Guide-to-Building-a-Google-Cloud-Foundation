@@ -1,6 +1,6 @@
 # The Ultimate Guide to Building a Google Cloud Foundation
 
-<a href="https://www.packtpub.com/cloud-networking/the-ultimate-guide-to-google-cloud-foundation?utm_source=github&utm_medium=repository&utm_campaign=9781803240855"><img src="https://static.packt-cdn.com/products/9781849517768/cover/smaller" alt="Early Access" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/cloud-networking/the-ultimate-guide-to-google-cloud-foundation?utm_source=github&utm_medium=repository&utm_campaign=9781803240855"><img src="https://static.packt-cdn.com/products/9781803240855/cover/smaller" alt="Early Access" height="256px" align="right"></a>
 
 This is the code repository for [The Ultimate Guide to Building a Google Cloud Foundation](https://www.packtpub.com/cloud-networking/the-ultimate-guide-to-google-cloud-foundation?utm_source=github&utm_medium=repository&utm_campaign=9781803240855), published by Packt.
 
