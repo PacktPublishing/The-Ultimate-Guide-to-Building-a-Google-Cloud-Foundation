@@ -57,3 +57,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 **Patrick Haggerty**
 was never quite sure what he wanted to be when he grew up, so he decided he’d just try things until he figured it out. Thrown out of college at 20, he spent 4 years in the USMC learning responsibility (and to be a better apex predator). Out on a disability, he turned wrenches in a mechanic shop, worked tech support, studied Actuarial Science, and coded in more languages than he wants to remember. When a job asked him to run some internal training, he discovered a lifelong passion: helping people learn.
 Patrick has worked as a professional trainer for 25+ years and spends most of his days working for ROI Training and Google, helping people learn to leverage Google Cloud.
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781803240855">https://packt.link/free-ebook/9781803240855 </a> </p>
